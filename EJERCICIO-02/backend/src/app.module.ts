@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { createObserveModule } from '@nestjs/observe';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { HolaController } from './hola/hola.controller';
+import { PizzasController } from './pizzas/pizzas.controller';
+import { PizzasService } from './pizzas/pizzas.service';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -16,7 +17,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'backend',
     }),
   ],
-  controllers: [AppController, HolaController],
-  providers: [AppService],
+  controllers: [AppController, PizzasController],
+  providers: [AppService, PizzasService],
 })
 export class AppModule {}
